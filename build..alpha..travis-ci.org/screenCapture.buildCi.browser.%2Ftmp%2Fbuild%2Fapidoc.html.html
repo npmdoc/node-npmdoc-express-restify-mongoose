@@ -1,0 +1,872 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="http://florianholzapfel.github.io/express-restify-mongoose/">express-restify-mongoose (v4.1.3)</a>
+</h1>
+<h4>Easily create a flexible REST interface for mongoose models</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.express-restify-mongoose">module express-restify-mongoose</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.express-restify-mongoose.defaults">
+            function <span class="apidocSignatureSpan">express-restify-mongoose.</span>defaults
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.express-restify-mongoose.resource_filter">
+            function <span class="apidocSignatureSpan">express-restify-mongoose.</span>resource_filter
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.express-restify-mongoose.serve">
+            function <span class="apidocSignatureSpan">express-restify-mongoose.</span>serve
+            <span class="apidocSignatureSpan">(app, model)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">express-restify-mongoose.</span>express_restify_mongoose</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">express-restify-mongoose.</span>resource_filter.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.express-restify-mongoose.express_restify_mongoose">module express-restify-mongoose.express_restify_mongoose</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.express-restify-mongoose.express_restify_mongoose.defaults">
+            function <span class="apidocSignatureSpan">express-restify-mongoose.express_restify_mongoose.</span>defaults
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.express-restify-mongoose.express_restify_mongoose.serve">
+            function <span class="apidocSignatureSpan">express-restify-mongoose.express_restify_mongoose.</span>serve
+            <span class="apidocSignatureSpan">(app, model)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.express-restify-mongoose.resource_filter">module express-restify-mongoose.resource_filter</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.express-restify-mongoose.resource_filter.resource_filter">
+            function <span class="apidocSignatureSpan">express-restify-mongoose.</span>resource_filter
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.express-restify-mongoose.resource_filter.prototype">module express-restify-mongoose.resource_filter.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.express-restify-mongoose.resource_filter.prototype.filterItem">
+            function <span class="apidocSignatureSpan">express-restify-mongoose.resource_filter.prototype.</span>filterItem
+            <span class="apidocSignatureSpan">(item, excluded)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.express-restify-mongoose.resource_filter.prototype.filterObject">
+            function <span class="apidocSignatureSpan">express-restify-mongoose.resource_filter.prototype.</span>filterObject
+            <span class="apidocSignatureSpan">(resource)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.express-restify-mongoose.resource_filter.prototype.filterPopulatedItem">
+            function <span class="apidocSignatureSpan">express-restify-mongoose.resource_filter.prototype.</span>filterPopulatedItem
+            <span class="apidocSignatureSpan">(item, opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.express-restify-mongoose.resource_filter.prototype.getExcluded">
+            function <span class="apidocSignatureSpan">express-restify-mongoose.resource_filter.prototype.</span>getExcluded
+            <span class="apidocSignatureSpan">(opts)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.express-restify-mongoose.resource_filter.prototype.isExcluded">
+            function <span class="apidocSignatureSpan">express-restify-mongoose.resource_filter.prototype.</span>isExcluded
+            <span class="apidocSignatureSpan">(field, opts)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.express-restify-mongoose" id="apidoc.module.express-restify-mongoose">module express-restify-mongoose</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.express-restify-mongoose.defaults" id="apidoc.element.express-restify-mongoose.defaults">
+        function <span class="apidocSignatureSpan">express-restify-mongoose.</span>defaults
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function defaults(options) {
+  customDefaults = options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var util = require('util');
+var _ = require('lodash');
+var Filter = require('./resource_filter');
+var customDefaults = null;
+var excludedMap = {};
+
+function getDefaults() {
+return _.<span class="apidocCodeKeywordSpan">defaults</span>(_.clone(customDefaults) || {}, {
+  prefix: '/api',
+  version: '/v1',
+  idProperty: '_id',
+  findOneAndUpdate: true,
+  findOneAndRemove: true,
+  lean: true,
+  restify: false,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.express-restify-mongoose.resource_filter" id="apidoc.element.express-restify-mongoose.resource_filter">
+        function <span class="apidocSignatureSpan">express-restify-mongoose.</span>resource_filter
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Filter(opts) {
+  this.model = opts.model;
+
+  this.filteredKeys = _.isPlainObject(opts.filteredKeys) ? {
+    private: opts.filteredKeys.private || [],
+    protected: opts.filteredKeys.protected || []
+  } : {
+    private: [],
+    protected: []
+  };
+
+  if (this.model &amp;&amp; this.model.discriminators &amp;&amp; _.isPlainObject(opts.excludedMap)) {
+    for (var modelName in this.model.discriminators) {
+      if (opts.excludedMap[modelName]) {
+        this.filteredKeys.private = this.filteredKeys.private.concat(opts.excludedMap[modelName].private);
+        this.filteredKeys.protected = this.filteredKeys.protected.concat(opts.excludedMap[modelName].protected);
+      }
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.express-restify-mongoose.serve" id="apidoc.element.express-restify-mongoose.serve">
+        function <span class="apidocSignatureSpan">express-restify-mongoose.</span>serve
+        <span class="apidocSignatureSpan">(app, model)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function restify(app, model) {
+  var opts = arguments.length &gt; 2 &amp;&amp; arguments[2] !== undefined ? arguments[2] : {};
+
+  var options = {};
+  _.assign(options, getDefaults(), opts);
+
+  var access = require('./middleware/access');
+  var ensureContentType = require('./middleware/ensureContentType')(options);
+  var filterAndFindById = require('./middleware/filterAndFindById')(model, options);
+  var onError = require('./middleware/onError');
+  var outputFn = require('./middleware/outputFn');
+  var prepareQuery = require('./middleware/prepareQuery')(options);
+  var prepareOutput = require('./middleware/prepareOutput')(options, excludedMap);
+
+  if (!_.isArray(options.private)) {
+    throw new Error('"options.private" must be an array of fields');
+  }
+
+  if (!_.isArray(options.protected)) {
+    throw new Error('"options.protected" must be an array of fields');
+  }
+
+  model.schema.eachPath(function (name, path) {
+    if (path.options.access) {
+      switch (path.options.access.toLowerCase()) {
+        case 'private':
+          options.private.push(name);
+          break;
+        case 'protected':
+          options.protected.push(name);
+          break;
+      }
+    }
+  });
+
+  options.filter = new Filter({
+    model: model,
+    excludedMap: excludedMap,
+    filteredKeys: {
+      private: options.private,
+      protected: options.protected
+    }
+  });
+
+  excludedMap[model.modelName] = options.filter.filteredKeys;
+
+  if (!_.isArray(options.preMiddleware)) {
+    options.preMiddleware = options.preMiddleware ? [options.preMiddleware] : [];
+  }
+
+  if (!_.isArray(options.preCreate)) {
+    options.preCreate = options.preCreate ? [options.preCreate] : [];
+  }
+
+  if (!_.isArray(options.preRead)) {
+    options.preRead = options.preRead ? [options.preRead] : [];
+  }
+
+  if (!_.isArray(options.preUpdate)) {
+    options.preUpdate = options.preUpdate ? [options.preUpdate] : [];
+  }
+
+  if (!_.isArray(options.preDelete)) {
+    options.preDelete = options.preDelete ? [options.preDelete] : [];
+  }
+
+  if (!options.contextFilter) {
+    options.contextFilter = function (model, req, done) {
+      return done(model);
+    };
+  }
+
+  if (!_.isArray(options.postCreate)) {
+    options.postCreate = options.postCreate ? [options.postCreate] : [];
+  }
+
+  if (!_.isArray(options.postRead)) {
+    options.postRead = options.postRead ? [options.postRead] : [];
+  }
+
+  if (!_.isArray(options.postUpdate)) {
+    options.postUpdate = options.postUpdate ? [options.postUpdate] : [];
+  }
+
+  if (!_.isArray(options.postDelete)) {
+    options.postDelete = options.postDelete ? [options.postDelete] : [];
+  }
+
+  if (!options.onError) {
+    options.onError = onError(!options.restify);
+  }
+
+  if (!options.outputFn) {
+    options.outputFn = outputFn(!options.restify);
+  }
+
+  options.name = options.name || model.modelName;
+
+  var ops = require('./operations')(model, options, excludedMap);
+
+  var uriItem = '' + options.prefix + options.version + '/' + options.name;
+  if (uriItem.indexOf('/:id') === -1) {
+    uriItem += '/:id';
+  }
+
+  var uriItems = uriItem.replace('/:id', '');
+  var uriCount = uriItems + '/count';
+  var uriShallow = uriItem + '/shallow';
+
+  if (_.isUndefined(app.delete)) {
+    app.delete = app.del;
+  }
+
+  app.use(function (req, res, next) {
+    req.erm = { model: model };
+    next();
+  });
+
+  var accessMiddleware = options.access ? access(options) : [];
+
+  app.get(uriItems, prepareQuery, options.preMiddleware, options.preRead, accessMiddleware, ops.getItems, prepareOutput);
+  app.get(uriCount, prepareQuery, options.preMiddleware, options.preRead, accessMiddleware, ops.getCount, prepareOutput);
+  app.get(uriItem, prepareQuery, options.preMiddleware, options.preRead, accessMiddleware, ops.getItem, prepareOutput);
+  app.get(uriShallow, prepareQuery, options.preMiddleware, options.preRead, accessMiddleware, ops.getShallow, prepareOutput);
+
+  app.post(uriItems, prepareQuery, ensureContentType, options.preMiddleware, options.preCreate, accessMiddleware, ops.createObject
+, prepareOutput);
+  app.post(uriItem, util.deprecate(prepareQuery, 'express-restify-mongoose: in a future maj ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.express-restify-mongoose.express_restify_mongoose" id="apidoc.module.express-restify-mongoose.express_restify_mongoose">module express-restify-mongoose.express_restify_mongoose</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.express-restify-mongoose.express_restify_mongoose.defaults" id="apidoc.element.express-restify-mongoose.express_restify_mongoose.defaults">
+        function <span class="apidocSignatureSpan">express-restify-mongoose.express_restify_mongoose.</span>defaults
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function defaults(options) {
+  customDefaults = options;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var util = require('util');
+var _ = require('lodash');
+var Filter = require('./resource_filter');
+var customDefaults = null;
+var excludedMap = {};
+
+function getDefaults() {
+return _.<span class="apidocCodeKeywordSpan">defaults</span>(_.clone(customDefaults) || {}, {
+  prefix: '/api',
+  version: '/v1',
+  idProperty: '_id',
+  findOneAndUpdate: true,
+  findOneAndRemove: true,
+  lean: true,
+  restify: false,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.express-restify-mongoose.express_restify_mongoose.serve" id="apidoc.element.express-restify-mongoose.express_restify_mongoose.serve">
+        function <span class="apidocSignatureSpan">express-restify-mongoose.express_restify_mongoose.</span>serve
+        <span class="apidocSignatureSpan">(app, model)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function restify(app, model) {
+  var opts = arguments.length &gt; 2 &amp;&amp; arguments[2] !== undefined ? arguments[2] : {};
+
+  var options = {};
+  _.assign(options, getDefaults(), opts);
+
+  var access = require('./middleware/access');
+  var ensureContentType = require('./middleware/ensureContentType')(options);
+  var filterAndFindById = require('./middleware/filterAndFindById')(model, options);
+  var onError = require('./middleware/onError');
+  var outputFn = require('./middleware/outputFn');
+  var prepareQuery = require('./middleware/prepareQuery')(options);
+  var prepareOutput = require('./middleware/prepareOutput')(options, excludedMap);
+
+  if (!_.isArray(options.private)) {
+    throw new Error('"options.private" must be an array of fields');
+  }
+
+  if (!_.isArray(options.protected)) {
+    throw new Error('"options.protected" must be an array of fields');
+  }
+
+  model.schema.eachPath(function (name, path) {
+    if (path.options.access) {
+      switch (path.options.access.toLowerCase()) {
+        case 'private':
+          options.private.push(name);
+          break;
+        case 'protected':
+          options.protected.push(name);
+          break;
+      }
+    }
+  });
+
+  options.filter = new Filter({
+    model: model,
+    excludedMap: excludedMap,
+    filteredKeys: {
+      private: options.private,
+      protected: options.protected
+    }
+  });
+
+  excludedMap[model.modelName] = options.filter.filteredKeys;
+
+  if (!_.isArray(options.preMiddleware)) {
+    options.preMiddleware = options.preMiddleware ? [options.preMiddleware] : [];
+  }
+
+  if (!_.isArray(options.preCreate)) {
+    options.preCreate = options.preCreate ? [options.preCreate] : [];
+  }
+
+  if (!_.isArray(options.preRead)) {
+    options.preRead = options.preRead ? [options.preRead] : [];
+  }
+
+  if (!_.isArray(options.preUpdate)) {
+    options.preUpdate = options.preUpdate ? [options.preUpdate] : [];
+  }
+
+  if (!_.isArray(options.preDelete)) {
+    options.preDelete = options.preDelete ? [options.preDelete] : [];
+  }
+
+  if (!options.contextFilter) {
+    options.contextFilter = function (model, req, done) {
+      return done(model);
+    };
+  }
+
+  if (!_.isArray(options.postCreate)) {
+    options.postCreate = options.postCreate ? [options.postCreate] : [];
+  }
+
+  if (!_.isArray(options.postRead)) {
+    options.postRead = options.postRead ? [options.postRead] : [];
+  }
+
+  if (!_.isArray(options.postUpdate)) {
+    options.postUpdate = options.postUpdate ? [options.postUpdate] : [];
+  }
+
+  if (!_.isArray(options.postDelete)) {
+    options.postDelete = options.postDelete ? [options.postDelete] : [];
+  }
+
+  if (!options.onError) {
+    options.onError = onError(!options.restify);
+  }
+
+  if (!options.outputFn) {
+    options.outputFn = outputFn(!options.restify);
+  }
+
+  options.name = options.name || model.modelName;
+
+  var ops = require('./operations')(model, options, excludedMap);
+
+  var uriItem = '' + options.prefix + options.version + '/' + options.name;
+  if (uriItem.indexOf('/:id') === -1) {
+    uriItem += '/:id';
+  }
+
+  var uriItems = uriItem.replace('/:id', '');
+  var uriCount = uriItems + '/count';
+  var uriShallow = uriItem + '/shallow';
+
+  if (_.isUndefined(app.delete)) {
+    app.delete = app.del;
+  }
+
+  app.use(function (req, res, next) {
+    req.erm = { model: model };
+    next();
+  });
+
+  var accessMiddleware = options.access ? access(options) : [];
+
+  app.get(uriItems, prepareQuery, options.preMiddleware, options.preRead, accessMiddleware, ops.getItems, prepareOutput);
+  app.get(uriCount, prepareQuery, options.preMiddleware, options.preRead, accessMiddleware, ops.getCount, prepareOutput);
+  app.get(uriItem, prepareQuery, options.preMiddleware, options.preRead, accessMiddleware, ops.getItem, prepareOutput);
+  app.get(uriShallow, prepareQuery, options.preMiddleware, options.preRead, accessMiddleware, ops.getShallow, prepareOutput);
+
+  app.post(uriItems, prepareQuery, ensureContentType, options.preMiddleware, options.preCreate, accessMiddleware, ops.createObject
+, prepareOutput);
+  app.post(uriItem, util.deprecate(prepareQuery, 'express-restify-mongoose: in a future maj ...</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.express-restify-mongoose.resource_filter" id="apidoc.module.express-restify-mongoose.resource_filter">module express-restify-mongoose.resource_filter</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.express-restify-mongoose.resource_filter.resource_filter" id="apidoc.element.express-restify-mongoose.resource_filter.resource_filter">
+        function <span class="apidocSignatureSpan">express-restify-mongoose.</span>resource_filter
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Filter(opts) {
+  this.model = opts.model;
+
+  this.filteredKeys = _.isPlainObject(opts.filteredKeys) ? {
+    private: opts.filteredKeys.private || [],
+    protected: opts.filteredKeys.protected || []
+  } : {
+    private: [],
+    protected: []
+  };
+
+  if (this.model &amp;&amp; this.model.discriminators &amp;&amp; _.isPlainObject(opts.excludedMap)) {
+    for (var modelName in this.model.discriminators) {
+      if (opts.excludedMap[modelName]) {
+        this.filteredKeys.private = this.filteredKeys.private.concat(opts.excludedMap[modelName].private);
+        this.filteredKeys.protected = this.filteredKeys.protected.concat(opts.excludedMap[modelName].protected);
+      }
+    }
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.express-restify-mongoose.resource_filter.prototype" id="apidoc.module.express-restify-mongoose.resource_filter.prototype">module express-restify-mongoose.resource_filter.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.express-restify-mongoose.resource_filter.prototype.filterItem" id="apidoc.element.express-restify-mongoose.resource_filter.prototype.filterItem">
+        function <span class="apidocSignatureSpan">express-restify-mongoose.resource_filter.prototype.</span>filterItem
+        <span class="apidocSignatureSpan">(item, excluded)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filterItem = function (item, excluded) {
+  var _this = this;
+
+  if (_.isArray(item)) {
+    return item.map(function (i) {
+      return _this.filterItem(i, excluded);
+    });
+  }
+
+  if (item &amp;&amp; excluded) {
+    if (_.isFunction(item.toObject)) {
+      item = item.toObject();
+    }
+
+    for (var i = 0, length = excluded.length; i &lt; length; i++) {
+      if (excluded[i].indexOf('.') &gt; 0) {
+        weedout(item, excluded[i]);
+      } else {
+        delete item[excluded[i]];
+      }
+    }
+  }
+
+  return item;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @returns {Object} - Filtered document.
+ */
+Filter.prototype.filterItem = function (item, excluded) {
+var _this = this;
+
+if (_.isArray(item)) {
+  return item.map(function (i) {
+    return _this.<span class="apidocCodeKeywordSpan">filterItem</span>(i, excluded);
+  });
+}
+
+if (item &amp;&amp; excluded) {
+  if (_.isFunction(item.toObject)) {
+    item = item.toObject();
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.express-restify-mongoose.resource_filter.prototype.filterObject" id="apidoc.element.express-restify-mongoose.resource_filter.prototype.filterObject">
+        function <span class="apidocSignatureSpan">express-restify-mongoose.resource_filter.prototype.</span>filterObject
+        <span class="apidocSignatureSpan">(resource)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filterObject = function (resource) {
+  var opts = arguments.length &gt; 1 &amp;&amp; arguments[1] !== undefined ? arguments[1] : {};
+
+  opts = _.defaults(opts, {
+    access: 'public',
+    excludedMap: {},
+    filteredKeys: this.filteredKeys,
+    modelName: this.model.modelName
+  });
+
+  var filtered = this.filterItem(resource, this.getExcluded(opts));
+
+  if (opts.populate) {
+    this.filterPopulatedItem(filtered, opts);
+  }
+
+  return filtered;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+    next();
+  }, errorHandler(req, res, next));
+}
+  }
+
+  function createObject(req, res, next) {
+req.body = options.filter.<span class="apidocCodeKeywordSpan">filterObject</span>(req.body || {}, {
+  access: req.access,
+  populate: req._ermQueryOptions.populate
+});
+
+if (model.schema.options._id) {
+  delete req.body._id;
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.express-restify-mongoose.resource_filter.prototype.filterPopulatedItem" id="apidoc.element.express-restify-mongoose.resource_filter.prototype.filterPopulatedItem">
+        function <span class="apidocSignatureSpan">express-restify-mongoose.resource_filter.prototype.</span>filterPopulatedItem
+        <span class="apidocSignatureSpan">(item, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">filterPopulatedItem = function (item, opts) {
+  var _this2 = this;
+
+  if (_.isArray(item)) {
+    return item.map(function (i) {
+      return _this2.filterPopulatedItem(i, opts);
+    });
+  }
+
+  for (var i = 0; i &lt; opts.populate.length; i++) {
+    if (!opts.populate[i].path) {
+      continue;
+    }
+
+    var excluded = this.getExcluded({
+      access: opts.access,
+      excludedMap: opts.excludedMap,
+      modelName: detective(this.model, opts.populate[i].path)
+    });
+
+    if (_.has(item, opts.populate[i].path)) {
+      this.filterItem(_.get(item, opts.populate[i].path), excluded);
+    } else {
+      var pathToArray = opts.populate[i].path.split('.').slice(0, -1).join('.');
+
+      if (_.has(item, pathToArray)) {
+        var array = _.get(item, pathToArray);
+        var pathToObject = opts.populate[i].path.split('.').slice(-1).join('.');
+
+        this.filterItem(_.map(array, pathToObject), excluded);
+      }
+    }
+  }
+
+  return item;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @returns {Object} - Filtered document.
+ */
+Filter.prototype.filterPopulatedItem = function (item, opts) {
+var _this2 = this;
+
+if (_.isArray(item)) {
+  return item.map(function (i) {
+    return _this2.<span class="apidocCodeKeywordSpan">filterPopulatedItem</span>(i, opts);
+  });
+}
+
+for (var i = 0; i &lt; opts.populate.length; i++) {
+  if (!opts.populate[i].path) {
+    continue;
+  }
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.express-restify-mongoose.resource_filter.prototype.getExcluded" id="apidoc.element.express-restify-mongoose.resource_filter.prototype.getExcluded">
+        function <span class="apidocSignatureSpan">express-restify-mongoose.resource_filter.prototype.</span>getExcluded
+        <span class="apidocSignatureSpan">(opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">getExcluded = function (opts) {
+  if (opts.access === 'private') {
+    return [];
+  }
+
+  var entry = opts.excludedMap &amp;&amp; opts.modelName ? opts.excludedMap[opts.modelName] : null;
+
+  if (!entry) {
+    entry = _.isPlainObject(opts.filteredKeys) ? {
+      private: opts.filteredKeys.private || [],
+      protected: opts.filteredKeys.protected || []
+    } : {
+      private: [],
+      protected: []
+    };
+  }
+
+  return opts.access === 'protected' ? entry.private : entry.private.concat(entry.protected);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ opts = _.defaults(opts, {
+   access: 'public',
+   excludedMap: {},
+   filteredKeys: this.filteredKeys,
+   modelName: this.model.modelName
+ });
+
+ return this.<span class="apidocCodeKeywordSpan">getExcluded</span>(opts).indexOf(field) &gt;= 0;
+};
+
+/**
+* Removes excluded keys from a document.
+* @memberof Filter
+* @param {Object} - Source document.
+* @param {Array} - Keys to filter.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.express-restify-mongoose.resource_filter.prototype.isExcluded" id="apidoc.element.express-restify-mongoose.resource_filter.prototype.isExcluded">
+        function <span class="apidocSignatureSpan">express-restify-mongoose.resource_filter.prototype.</span>isExcluded
+        <span class="apidocSignatureSpan">(field, opts)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">isExcluded = function (field, opts) {
+  if (!field) {
+    return false;
+  }
+
+  opts = _.defaults(opts, {
+    access: 'public',
+    excludedMap: {},
+    filteredKeys: this.filteredKeys,
+    modelName: this.model.modelName
+  });
+
+  return this.getExcluded(opts).indexOf(field) &gt;= 0;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+var errorHandler = require('./errorHandler')(options);
+
+function findById(filteredContext, id) {
+  return filteredContext.findOne().and(_defineProperty({}, options.idProperty, id));
+}
+
+function isDistinctExcluded(req) {
+  return options.filter.<span class="apidocCodeKeywordSpan">isExcluded</span>(req._ermQueryOptions['distinct'], {
+    access: req.access,
+    excludedMap: excludedMap
+  });
+}
+
+function getItems(req, res, next) {
+  if (isDistinctExcluded(req)) {
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
